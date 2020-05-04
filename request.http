@@ -1,0 +1,11 @@
+POST http://localhost:7071/api/HttpTrigger1
+Content-Type: application/json
+
+{
+    "name": "Jane",
+    "from_email": "jane@example.com",
+    "to_email": "john@example.com",
+    "phone": "999-999-999",
+    "subject": "Usage: Azure Funtion",
+    "message": "Hey, can you check the usage for out azure functions?"
+}
