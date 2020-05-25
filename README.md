@@ -1,6 +1,8 @@
 # Email The Form
 
-<img src="https://raw.githubusercontent.com/Azure/azure-functions-cli/master/src/Azure.Functions.Cli/npm/assets/azure-functions-logo-color-raster.png" width="40">
+[![CodeFactor](https://www.codefactor.io/repository/github/saihaj/emailtheform/badge)](https://www.codefactor.io/repository/github/saihaj/emailtheform) &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/Azure/azure-functions-cli/master/src/Azure.Functions.Cli/npm/assets/azure-functions-logo-color-raster.png" width="30">
+
 
 An Azure Function that allows you to power a "Contact Form" or a "Feedback Form" on your website or app. You will get the repsonses in your email and you can just reply-back to the user instantly.
 
