@@ -7,5 +7,5 @@ Content-Type: application/json
     "to_email": "john@example.com",
     "phone": "999-999-999",
     "subject": "Usage: Azure Funtion",
-    "message": "Hey, can you check the usage for out azure functions?"
+    "message": "Hey, can you check my azure functions?"
 }
