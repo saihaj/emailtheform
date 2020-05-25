@@ -39,3 +39,12 @@ You can check a sample request [`request.http`](request.http)
   ```
 * Start debugging or F5 and you should have this running on http://localhost:7071/api/EmailTheForm
 * To test use the [`request.http`](request.http) and modify the values.
+  
+
+## Production Deployment
+
+* Follow the steps given in [Azure Docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python#sign-in-to-azure) to deploy your function from VS Code.
+* Now you need to give your Sendgrid API key to deployed Azure Function to run. Go to `Configuration` of azure function (use [Azure Docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings) to find this) and add a new application setting:
+  *  name: `SENDGRID_API_KEY`
+  *  value: `YOUR_SENDGRID_API_KEY`
+  
