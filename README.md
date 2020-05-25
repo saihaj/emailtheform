@@ -8,3 +8,32 @@ Currently, this I am using SendGrid as an relay for sending emails. Their free-t
 
 
 I will try to make same thing for AWS Lambda and without SendGrid.
+
+## Required Values
+
+* `name` User inputted name from your contact form
+* `from_email` User inputted email from your contact form
+* `to_email` Email you want to deliver the responses to
+* `phone` User inputted phone number from your contact form
+* `subject` Subject you want to set for your responses email
+
+You can check a sample request [`request.http`](request.http) 
+
+
+## Development 
+
+* Install the recommended extensions from [`extensions.json`](.vscode/extensions.json). You can also use [microsoft docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python) and install all the prequisites.
+* VS Code should tell you to create a virtual env. You can also run this `python3 -m venv .venv` to create `.venv` in root directory of this project
+* Create a `local.settings.json` file in root directory of this project and add your Sendgrid API key:
+  ```
+  {
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "SENDGRID_API_KEY": "YOUR_SENDGRID_API_KEY"
+   }
+  }
+  ```
+* Start debugging or F5 and you should have this running on http://localhost:7071/api/EmailTheForm
+* To test use the [`request.http`](request.http) and modify the values.
