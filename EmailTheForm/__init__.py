@@ -48,8 +48,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse("Message sent")
     else:
         return func.HttpResponse("HTTP request was given empty param value", status_code=400)
-
-    
-
-
-
+        
