@@ -1,0 +1,20 @@
+.contact-form .error-message {
+    color: red;
+    font-size: 0.8em;
+}
+
+@keyframes alternate-colors {
+    50% {color: rgb(52, 52, 185);}
+    100% {color:rgb(213,167,6)}
+}
+
+.contact-form .container .text-center {
+    padding-top: 50px;
+    animation-name: alternate-colors;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.contact-form .container .text-center.fail{
+    color: red !important;
+}
