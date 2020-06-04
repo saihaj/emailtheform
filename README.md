@@ -26,20 +26,31 @@ You can check a sample request [`request.http`](request.http)
 
 * Install the recommended extensions from [`extensions.json`](.vscode/extensions.json). You can also use [microsoft docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python) and install all the prequisites.
 * VS Code should tell you to create a virtual env. You can also run this `python3 -m venv .venv` to create `.venv` in root directory of this project
-* Create a `local.settings.json` file in root directory of this project and add your Sendgrid API key:
-  ```
-  {
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "python",
-    "SENDGRID_API_KEY": "YOUR_SENDGRID_API_KEY"
-   }
-  }
-  ```
+* Create a `local.settings.json` file in root directory of this project and add your Sendgrid API key. Fill in required fields the [`local.settings.json.example`](local.settings.json.example)
 * Start debugging or F5 and you should have this running on http://localhost:7071/api/EmailTheForm
-* To test use the [`request.http`](request.http) and modify the values.
+* To test use the [`request.http`](request.http) and modify the values or check [Demo](#demo) section
   
+## Demo
+
+Once you have the development environnement running. You can test a contact form running locally with a provided create-react-app in `example` directory made using react-bootstrap. Checkout [react app template](https://github.com/saihaj/saihaj-create-react-app) for more commands.
+
+* Open a new terminal window
+  ```
+  cd example
+  ```
+* Install all the dependencies
+  ```
+  npm install
+  ```
+* Need to change `to_email` field in [`ContactForm.js`](example/src/ContactForm.js#L52) and use your email to try this out.
+* Run the app
+  ```
+  npm start
+  ```
+* You should have this running on http://localhost:3000
+
+NOTE: Make sure that the function is running on http://localhost:7071/api/EmailTheForm
+
 
 ## Production Deployment
 
@@ -47,4 +58,5 @@ You can check a sample request [`request.http`](request.http)
 * Now you need to give your Sendgrid API key to deployed Azure Function to run. Go to `Configuration` of azure function (use [Azure Docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings) to find this) and add a new application setting:
   *  name: `SENDGRID_API_KEY`
   *  value: `YOUR_SENDGRID_API_KEY`
+* Check out Azure Docs to enable [CORS](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#cors) and allow your application to use this service.
   
